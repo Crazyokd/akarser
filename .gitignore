@@ -2,3 +2,5 @@
 latex/
 html/
 *.o
+*.so
+*.a
