@@ -48,6 +48,7 @@ int main()
         aka_conf_destroy(group);
         return -1;
     }
+    fclose(file);
 
     uint32_t repeat_cnt = atoi(aka_conf_get(&group, "repeat_cnt"));
     while (repeat_cnt--) {
@@ -56,7 +57,6 @@ int main()
 
     // Close the file and free the memory
     aka_free(array);
-    fclose(file);
     aka_conf_destroy(group);
     return 0;
 }
