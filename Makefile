@@ -1,4 +1,4 @@
-CFLAGS=-g -Wall -Werror -Wextra -Wshadow -Wpedantic -std=c99
+CFLAGS=-g -Wall -Werror -Wextra -Wshadow -std=c99
 
 .DEFAULT_GOAL := default # Set default target
 
@@ -6,7 +6,7 @@ default:
 	bear -- make akarser
 	doxygen Doxyfile
 
-akarser: main.o akarser.o config.o
+akarser: main.o akarser.o config.o d-loader.o
 	$(CC) $^ -o $@ $(CFLAGS) $(LDFLAGS)
 
 run: akarser

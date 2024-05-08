@@ -4,6 +4,7 @@
 
 #include "akarser.h"
 #include "config.h"
+#include "d-loader.h"
 
 int main()
 {
@@ -14,6 +15,7 @@ int main()
     }
 
     /* load and register dynamic libraries */
+    aka_load_decoders(group);
 
     /* read and parse pcap file */
     FILE *file = fopen(aka_conf_get(&group, "pcap_file"), "rb");
