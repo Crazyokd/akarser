@@ -1,10 +1,10 @@
 #include <stdio.h>
-#include <stdlib.h>
 #include <stdint.h>
 
 #include "akarser.h"
 #include "config.h"
 #include "d-loader.h"
+#include "aka-core.h"
 
 int main()
 {
@@ -31,7 +31,7 @@ int main()
     fseek(file, 0, SEEK_SET);
 
     // Allocate memory for the array
-    unsigned char *array = (unsigned char *)malloc(file_size);
+    unsigned char *array = (unsigned char *)aka_malloc(file_size);
     if (!array) {
         perror("Error allocating memory");
         fclose(file);
@@ -43,7 +43,7 @@ int main()
     size_t bytes_read = fread(array, 1, file_size, file);
     if (bytes_read != file_size) {
         perror("Error reading file");
-        free(array);
+        aka_free(array);
         fclose(file);
         aka_conf_destroy(group);
         return -1;
@@ -55,7 +55,7 @@ int main()
     }
 
     // Close the file and free the memory
-    free(array);
+    aka_free(array);
     fclose(file);
     aka_conf_destroy(group);
     return 0;

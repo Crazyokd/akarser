@@ -98,7 +98,7 @@ static int aka_register_decoder(int proto_id, char *prefix, const char *name, co
  */
 static int aka_parse_decoder_conf(char *str)
 {
-    if (!str) return;
+    if (!str) return 0;
 
     char *tok = str;
 

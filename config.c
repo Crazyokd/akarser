@@ -6,11 +6,11 @@
  * @brief 
  */
 
-#include <stdlib.h>
 #include <string.h>
 #include <ctype.h>
 #include <stdio.h>
 #include "config.h"
+#include "aka-core.h"
 
 #define MAX_LINE_LENGTH 1024
 const char *default_group_name = "global";
@@ -52,7 +52,7 @@ static char *strtrim(char *str)
 static aka_conf_group_t *aka_conf_group_create(const char *name)
 {
     if (!name) return NULL;
-    aka_conf_group_t *group = malloc(sizeof(aka_conf_group_t));
+    aka_conf_group_t *group = aka_malloc(sizeof(aka_conf_group_t));
     if (!group) return NULL;
 
     memset(group, 0, sizeof(aka_conf_group_t));
@@ -64,7 +64,7 @@ static aka_conf_entry_t *aka_conf_entry_create(aka_conf_group_t *group, const ch
 {
     if (!group || !key || !value || !strlen(key) || !strlen(value)) return NULL;
 
-    aka_conf_entry_t *entry = malloc(sizeof(aka_conf_entry_t));
+    aka_conf_entry_t *entry = aka_malloc(sizeof(aka_conf_entry_t));
     if (!entry) return NULL;
 
     strncpy(entry->key, key, MAX_KEY_LENGTH);
@@ -166,11 +166,11 @@ void aka_conf_destroy(aka_conf_group_t *group)
     do {
         while (group->entry) {
             next = group->entry->next;
-            free(group->entry);
+            aka_free(group->entry);
             group->entry = next;
         }
         group_next = group->next;
-        free(group);
+        aka_free(group);
         group = group_next;
     } while (group != group_sp);
 }
