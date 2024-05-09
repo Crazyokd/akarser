@@ -4,26 +4,20 @@
 #include "akarser.h"
 #include "aka-config.h"
 #include "dloader.h"
-#include "aka-core.h"
+#include "aka-log.h"
 
 int main()
 {
     /* parse main configuration file */
     aka_conf_group_t *group = aka_conf_create("akarser.conf");
-    if (!group) {
-        return -1;
-    }
+    aka_assert(group);
 
     /* load and register dynamic libraries */
     aka_load_decoders(group);
 
     /* read and parse pcap file */
     FILE *file = fopen(aka_conf_get(&group, "pcap_file"), "rb");
-    if (!file) {
-        perror("Error opening file");
-        aka_conf_destroy(group);
-        return -1;
-    }
+    aka_assert(file);
 
     // Determine the file size
     fseek(file, 0, SEEK_END);
@@ -32,22 +26,11 @@ int main()
 
     // Allocate memory for the array
     unsigned char *array = (unsigned char *)aka_malloc(file_size);
-    if (!array) {
-        perror("Error allocating memory");
-        fclose(file);
-        aka_conf_destroy(group);
-        return -1;
-    }
+    aka_assert(array);
 
     // Read the file contents into the array
     size_t bytes_read = fread(array, 1, file_size, file);
-    if (bytes_read != file_size) {
-        perror("Error reading file");
-        aka_free(array);
-        fclose(file);
-        aka_conf_destroy(group);
-        return -1;
-    }
+    aka_assert(bytes_read == file_size);
     fclose(file);
 
     uint32_t repeat_cnt = atoi(aka_conf_get(&group, "repeat_cnt"));

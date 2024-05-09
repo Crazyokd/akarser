@@ -4,6 +4,7 @@
 #include <sys/time.h>
 #include <time.h>
 #include <string.h>
+#include <execinfo.h>
 
 static aka_log_level_e aka_log_level_string_to_enum(const char *level)
 {
@@ -150,4 +151,35 @@ void aka_init(aka_conf_entry_t *entry)
         }
         entry = entry->next;
     }
+}
+
+#define HAVE_BACKTRACE 1
+
+AKA_GNUC_NORETURN void aka_abort(void)
+{
+#if HAVE_BACKTRACE
+    int i;
+    int nptrs;
+    void *buffer[100];
+    char **strings;
+
+    nptrs = backtrace(buffer, AKA_ARRAY_SIZE(buffer));
+    aka_fatal("backtrace() returned %d addresses", nptrs);
+
+    strings = backtrace_symbols(buffer, nptrs);
+    if (strings) {
+        for (i = 1; i < nptrs; i++)
+            aka_log_print(AKA_LOG_FATAL, "%s\n", strings[i]);
+
+        aka_free(strings);
+    }
+
+    abort();
+#elif defined(_WIN32)
+    DebugBreak();
+    abort();
+    ExitProcess(127);
+#else
+    abort();
+#endif
 }

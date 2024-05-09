@@ -51,7 +51,7 @@ void aka_log_printf(aka_log_level_e level, const char *file, int line,
     AKA_GNUC_PRINTF(6, 7);
 
 #define aka_log_message(level, err, ...) \
-    aka_log_printf(level, __FILE__, __LINE__, __func__, 0, __VA_ARGS__)
+    aka_log_printf(level, __FILE__, __LINE__, AKA_FUNC, 0, __VA_ARGS__)
 
 #define aka_log_print(level, ...) \
     aka_log_printf(level, NULL, 0, NULL, 1, __VA_ARGS__)
@@ -65,6 +65,16 @@ void aka_log_printf(aka_log_level_e level, const char *file, int line,
 
 #define AKA_HUGE_LEN 8192 /* Can Stack */
 
+AKA_GNUC_NORETURN void aka_abort(void);
+
+#define aka_assert(expr) \
+do { \
+    if (aka_likely(expr)) ; \
+    else { \
+        aka_fatal("%s: Assertion `%s' failed.", AKA_FUNC, #expr); \
+        aka_abort(); \
+    } \
+} while(0)
 
 #ifdef __cplusplus
 }
