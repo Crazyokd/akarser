@@ -2,7 +2,7 @@
 #include <stdint.h>
 
 #include "akarser.h"
-#include "config.h"
+#include "aka-config.h"
 #include "d-loader.h"
 #include "aka-core.h"
 

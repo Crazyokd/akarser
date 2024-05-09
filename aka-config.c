@@ -1,5 +1,5 @@
 /**
- * @file config.c
+ * @file aka-config.c
  * @author Rekord (wildrekord@gmail.com)
  * @date 2024-05-07 02:08
  * 
@@ -9,7 +9,7 @@
 #include <string.h>
 #include <ctype.h>
 #include <stdio.h>
-#include "config.h"
+#include "aka-config.h"
 #include "aka-core.h"
 
 #define MAX_LINE_LENGTH 1024

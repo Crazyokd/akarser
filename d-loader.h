@@ -9,7 +9,7 @@
 #ifndef AKA_D_LOADER_H
 #define AKA_D_LOADER_H
 
-#include "config.h"
+#include "aka-config.h"
 
 typedef enum {
     UNKNOWN_PROTO     = 0,
