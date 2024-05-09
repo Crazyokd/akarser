@@ -1,16 +1,19 @@
-CFLAGS=-g -Wall -Werror -Wextra -Wshadow -std=gnu99
+.PHONY: clean
+CFLAGS=-g -Wall -Werror -Wextra -Wshadow -Wunused-function -std=gnu99
 export CFLAGS
+LDFLAGS=
+ROOT_DIR=$(shell pwd)
 
 .DEFAULT_GOAL := default # Set default target
 
+include lib/core/core.mk
+
 default:
-	bear -- make akarser
+	bear -- $(MAKE) -C lib/core
+	bear --append -- make akarser
 	doxygen Doxyfile
 
-lol:
-	$(MAKE) -C lib/lol
-
-akarser: main.o akarser.o config.o d-loader.o
+akarser: main.o akarser.o d-loader.o
 	$(CC) $^ -o $@ $(CFLAGS) $(LDFLAGS)
 
 run: akarser
@@ -18,9 +21,7 @@ run: akarser
 debug: akarser
 	gdb akarser
 
-.PHONY: clean
-
 clean:
-	$(MAKE) -C lib/lol clean
+	$(MAKE) -C lib/core clean
 	rm -f *.o akarser compile_commands.json
 	rm -rf html latex
