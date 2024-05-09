@@ -1,0 +1,13 @@
+<map id="src/dloader.c" name="src/dloader.c">
+<area shape="rect" id="node1" title="load and register dynamic libraries" alt="" coords="367,5,471,32"/>
+<area shape="rect" id="node2" href="$dloader_8h.html" title="load and register dynamic libraries" alt="" coords="69,80,152,107"/>
+<area shape="rect" id="node4" href="$aka-log_8h_source.html" title=" " alt="" coords="231,80,313,107"/>
+<area shape="rect" id="node6" title=" " alt="" coords="341,155,408,181"/>
+<area shape="rect" id="node8" title=" " alt="" coords="381,229,451,256"/>
+<area shape="rect" id="node10" title=" " alt="" coords="483,80,554,107"/>
+<area shape="rect" id="node11" title=" " alt="" coords="579,80,645,107"/>
+<area shape="rect" id="node3" href="$aka-config_8h.html" title="parse conf file" alt="" coords="5,155,107,181"/>
+<area shape="rect" id="node5" title=" " alt="" coords="131,155,202,181"/>
+<area shape="rect" id="node7" href="$aka-core_8h.html" title="core function" alt="" coords="227,155,317,181"/>
+<area shape="rect" id="node9" href="$aka-macros_8h_source.html" title=" " alt="" coords="217,229,327,256"/>
+</map>
