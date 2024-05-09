@@ -63,14 +63,14 @@ static int aka_register_decoder(int proto_id, char *prefix, const char *name, co
 
     handle = dlopen(lib_path, RTLD_LAZY);
     if (!handle) {
-        aka_warn("open %s fail!\n", name);
+        aka_warn("open %s fail!", name);
         return -1;
     }
 
     aka_decoders[proto_id].process_fn = (decoder_process_func)dlsym(
         handle, "aka_decoder_process");
     if (!aka_decoders[proto_id].process_fn) {
-        aka_warn("load %s fail, no \"aka_decoder_process\" function in lib!\n", name);
+        aka_warn("load %s fail, no \"aka_decoder_process\" function in lib!", name);
         dlclose(handle);
         return -1;
     }
@@ -80,7 +80,7 @@ static int aka_register_decoder(int proto_id, char *prefix, const char *name, co
         handle, "aka_decoder_destroy");
 
     if (aka_decoders[proto_id].init_fn && aka_decoders[proto_id].init_fn(conf)) {
-        aka_warn("init %s fail!\n", name);
+        aka_warn("init %s fail!", name);
         dlclose(handle);
         return -1;
     }
@@ -110,7 +110,7 @@ static int aka_parse_decoder_conf(char *str)
     }
 
     if (!aka_register_decoder(atoi(segs[0]), segs[1], segs[2], segs[3])) {
-        aka_info("loaded decoder[%d], prefix: \"%s\", name: \"%s\", conf: \"%s\"\n",
+        aka_info("loaded decoder[%d], prefix: \"%s\", name: \"%s\", conf: \"%s\"",
                atoi(segs[0]), segs[1], segs[2], segs[3]);
         return 1;
     }
