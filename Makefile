@@ -13,7 +13,7 @@ default:
 	bear --append -- make akarser
 	doxygen Doxyfile
 
-akarser: main.o akarser.o d-loader.o
+akarser: main.o akarser.o dloader.o
 	$(CC) $^ -o $@ $(CFLAGS) $(LDFLAGS)
 
 run: akarser

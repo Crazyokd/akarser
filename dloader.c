@@ -1,12 +1,12 @@
 /**
- * @file d-loader.c
+ * @file dloader.c
  * @author rekord (wildrekord@gmail.com)
  * @date 2024-05-07 13:40
  * 
  * @brief load and register dynamic libraries
  */
 
-#include "d-loader.h"
+#include "dloader.h"
 
 #include <stdio.h>
 #include <stdlib.h>

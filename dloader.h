@@ -1,13 +1,13 @@
 /**
- * @file d-loader.h
+ * @file dloader.h
  * @author rekord (wildrekord@gmail.com)
  * @date 2024-05-07 13:40
  * 
  * @brief load and register dynamic libraries
  */
 
-#ifndef AKA_D_LOADER_H
-#define AKA_D_LOADER_H
+#ifndef AKA_DLOADER_H
+#define AKA_DLOADER_H
 
 #include "aka-config.h"
 

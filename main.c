@@ -3,7 +3,7 @@
 
 #include "akarser.h"
 #include "aka-config.h"
-#include "d-loader.h"
+#include "dloader.h"
 #include "aka-core.h"
 
 int main()
