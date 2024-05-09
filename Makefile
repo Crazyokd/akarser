@@ -29,4 +29,3 @@ clean:
 	$(MAKE) -C lib/core clean
 	$(MAKE) -C src clean
 	$(RM) -f compile_commands.json
-	$(RM) -rf html latex
