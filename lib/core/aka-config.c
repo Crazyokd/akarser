@@ -82,7 +82,7 @@ static aka_conf_entry_t *aka_conf_entry_create(aka_conf_group_t *group, const ch
  * @param len 
  * @return Found group or newly created group
  */
-inline static aka_conf_group_t *aka_conf_parse_group_name(aka_conf_group_t *group, const char *name)
+aka_inline static aka_conf_group_t *aka_conf_parse_group_name(aka_conf_group_t *group, const char *name)
 {
     if (!group || !name) return NULL;
 
@@ -109,7 +109,7 @@ inline static aka_conf_group_t *aka_conf_parse_group_name(aka_conf_group_t *grou
  * @param group 
  * @param line 
  */
-inline static void aka_conf_parse_pair(aka_conf_group_t *group, const char *line)
+aka_inline static void aka_conf_parse_pair(aka_conf_group_t *group, const char *line)
 {
     char key[MAX_KEY_LENGTH];
     char value[MAX_VALUE_LENGTH];

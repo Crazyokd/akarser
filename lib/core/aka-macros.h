@@ -1,6 +1,12 @@
 #ifndef AKA_MACROS_H_
 #define AKA_MACROS_H_
 
+#if defined(_MSC_VER)
+#define aka_inline __inline
+#else
+#define aka_inline __inline__
+#endif
+
 /* 与编译器优化相关的宏 */
 /* likely/unlikely */
 #if __GNUC__ >= 3
