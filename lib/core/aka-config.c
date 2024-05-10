@@ -224,3 +224,18 @@ char *aka_conf_get(aka_conf_group_t **p_group, const char *o_key)
 
     return NULL;
 }
+
+aka_conf_entry_t *aka_conf_get_entry(aka_conf_group_t *group, const char *name)
+{
+    if (!group || !name || !strlen(name)) return NULL;
+
+    aka_conf_group_t *group_sp = group; /* record start point */
+    do {
+        if (strcmp(name, group->name) == 0) {
+            return group->entry;
+        }
+        group = group->next;
+    } while (group != group_sp);
+
+    return NULL;
+}

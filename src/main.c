@@ -12,6 +12,9 @@ int main()
     aka_conf_group_t *group = aka_conf_create("akarser.conf");
     aka_assert(group);
 
+    /* init log configuration */
+    aka_log_init(aka_conf_get_entry(group, "log"));
+
     /* load and register dynamic libraries */
     aka_load_decoders(group);
 

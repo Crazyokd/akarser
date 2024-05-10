@@ -42,11 +42,21 @@ void aka_conf_destroy(aka_conf_group_t *conf);
 
 /**
  * @brief Get configuration value by key
+ *        if the key does not have group prefix, then use global group
  * 
  * @param p_group point to aka_conf_group_t pointer
  * @param o_key
  * @return the value of corresponding key or NULL if not found
  */
 char *aka_conf_get(aka_conf_group_t **p_group, const char *o_key);
+
+/**
+ * @brief get entry list by group name
+ * 
+ * @param group configuration group
+ * @param name group name
+ * @return the entry list or NULL if not found
+ */
+aka_conf_entry_t *aka_conf_get_entry(aka_conf_group_t *group, const char *name);
 
 #endif
