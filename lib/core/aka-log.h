@@ -38,13 +38,13 @@ typedef enum {
     AKA_LOG_FULL = AKA_LOG_TRACE,
 } aka_log_level_e;
 
-typedef struct aka_context_s {
+typedef struct aka_log_context_s {
     aka_log_level_e file_level;
     const char *file_location;
     aka_log_level_e stdout_level;
-} aka_context_t;
+} aka_log_context_t;
 
-void aka_init(aka_conf_entry_t *entry);
+void aka_log_init(aka_conf_entry_t *entry);
 
 void aka_log_printf(aka_log_level_e level, const char *file, int line,
                     const char *func, int content_only, const char *format, ...)

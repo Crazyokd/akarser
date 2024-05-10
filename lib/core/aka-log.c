@@ -127,25 +127,25 @@ void aka_log_printf(aka_log_level_e level, const char *file, int line,
     va_end(args);
 }
 
-static aka_context_t self;
+static aka_log_context_t self;
 
-static aka_context_t *aka_context()
+static aka_log_context_t *aka_log_context()
 {
     return &self;
 }
 
-void aka_init(aka_conf_entry_t *entry)
+void aka_log_init(aka_conf_entry_t *entry)
 {
     while (entry) {
         if (!strcmp(entry->key, "format")) {
         } else if (!strcmp(entry->key, "stdout.level")) {
-            aka_context()->stdout_level =
+            aka_log_context()->stdout_level =
                 aka_log_level_string_to_enum(entry->value);
         } else if (!strcmp(entry->key, "file.level")) {
-            aka_context()->file_level =
+            aka_log_context()->file_level =
                 aka_log_level_string_to_enum(entry->value);
         } else if (!strcmp(entry->key, "file.location")) {
-            aka_context()->file_location = entry->value;
+            aka_log_context()->file_location = entry->value;
         } else {
             /* unknown aka log configuration */
         }
