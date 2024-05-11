@@ -11,6 +11,6 @@
 
 #include <stdlib.h>
 
-void aka_parse(unsigned char *buf, size_t len);
+int aka_parse(unsigned char *buf, size_t size);
 
 #endif

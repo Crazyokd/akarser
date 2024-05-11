@@ -10,6 +10,7 @@
 #define AKA_DLOADER_H
 
 #include "aka-config.h"
+#include "pkt-header.h"
 
 typedef enum {
     UNKNOWN_PROTO     = 0,
@@ -20,13 +21,8 @@ typedef enum {
     MAX_PROTO
 } protocol_id_t;
 
-typedef struct pkt_hdr_s {
-    unsigned int ts_sec;
-    unsigned int ts_usec;
-} pkt_hdr_t;
-
 typedef int (*decoder_init_func)(const char *conf);
-typedef int (*decoder_process_func)(pkt_hdr_t *hdr);
+typedef int (*decoder_process_func)(aka_pkt_hdr_t *hdr);
 typedef int (*decoder_destroy_func)();
 
 /**
