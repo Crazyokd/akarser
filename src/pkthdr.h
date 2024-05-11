@@ -37,6 +37,8 @@ typedef struct aka_ethhdr_s {
 } aka_ethhdr_t;
 
 /* ip layer */
+#define AKA_IPV6_SIZE 16
+
 typedef struct aka_ipv4hdr_s {
 	uint8_t vhl; /* version:4 + 4:header length(* 4) */
 	uint8_t tos; /* differentiated services field */
@@ -58,8 +60,8 @@ typedef struct aka_ipv6hdr_s {
     uint16_t len; /* Payload Length */
     uint8_t nxthdr; /* Next Header */
     uint8_t hop; /* Hop Limit */
-    uint8_t src[16];
-	uint8_t dst[16];
+    uint8_t src[AKA_IPV6_SIZE];
+	uint8_t dst[AKA_IPV6_SIZE];
 } aka_ipv6hdr_t;
 
 /* tcp layer */
@@ -78,21 +80,44 @@ typedef struct aka_tcphdr_s {
 	uint16_t urp; /* Urgent pointer */
 } aka_tcphdr_t;
 
-typedef struct aka_pkt_hdr_s {
-	uint64_t no;
-    unsigned int ts_sec;
-    unsigned int ts_usec;
-
-	aka_eparse_t parse_res; /* parse result */
-} aka_pkt_hdr_t;
-
-
 /* error type */
 typedef enum {
 	AKA_EPARSE_UNKNOWN = 0,
 	AKA_EPARSE_MAC = 1,
 	AKA_EPARSE_IP  = 2,
 	AKA_EPARSE_TCP = 3,
+	AKA_EPARSE_OK  = 4,
 } aka_eparse_t;
+
+typedef struct aka_pkt_hdr_s {
+	uint64_t no;
+    unsigned int ts_sec;
+    unsigned int ts_usec;
+
+	uint16_t l3_proto; /* layer 3 protocol */
+	union {
+		struct {
+			uint32_t src;
+			uint32_t dst;
+		} ipv4;
+		struct {
+			uint8_t src[16];
+			uint8_t dst[16];
+		} ipv6;
+	} l3;
+	uint16_t l4_proto; /* layer 4 protocol */
+	uint16_t src_port;
+	uint16_t dst_port;
+	union {
+		struct {
+
+		} udp;
+		struct {
+
+		} tcp;
+	} l4;
+
+	aka_eparse_t parse_res; /* parse result */
+} aka_pkt_hdr_t;
 
 #endif

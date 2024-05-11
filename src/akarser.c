@@ -6,6 +6,8 @@
 #include "aka-log.h"
 #include "pkthdr.h"
 #include "mac/aka-mac.h"
+#include "ip/aka-ip.h"
+#include "tcp/aka-tcp.h"
 
 #include <stdint.h>
 #include <string.h>
@@ -19,12 +21,19 @@ static void aka_parse_data(aka_pkt_hdr_t *pkt, unsigned char *buf, size_t size)
 
     int idx = 0;
 
-    idx += aka_decode_eth(buf + idx, size);
+    idx += aka_decode_eth(pkt, buf + idx, size);
     if (idx < 0) {
         pkt->parse_res = AKA_EPARSE_MAC;
         return;
     }
 
+    idx += aka_decode_ip(pkt, buf + idx, size);
+    if (idx < 0) {
+        pkt->parse_res = AKA_EPARSE_TCP;
+        return;
+    }
+
+    pkt->parse_res = AKA_EPARSE_OK;
 }
 
 int aka_parse(unsigned char *buf, size_t size)

@@ -9,6 +9,8 @@
 #ifndef AKA_MAC_H
 #define AKA_MAC_H
 
+#include "pkthdr.h"
+
 #include <stddef.h>
 
 #define AKA_IDETH_IPV4            0x0008
@@ -32,6 +34,6 @@
 #define AKA_IDETH_CISCO_META      0x0989
 #define AKA_IDETH_LLDP            0xcc88
 
-int aka_decode_eth(unsigned char *buf, size_t size);
+int aka_decode_eth(aka_pkt_hdr_t *pkt, unsigned char *buf, size_t size);
 
 #endif
