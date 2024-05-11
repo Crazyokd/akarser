@@ -10,7 +10,7 @@
 #define AKA_DLOADER_H
 
 #include "aka-config.h"
-#include "pkt-header.h"
+#include "pkthdr.h"
 
 typedef enum {
     UNKNOWN_PROTO     = 0,

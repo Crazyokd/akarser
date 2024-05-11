@@ -4,7 +4,7 @@
 
 #include "akarser.h"
 #include "aka-log.h"
-#include "pkt-header.h"
+#include "pkthdr.h"
 #include "mac/aka-mac.h"
 
 #include <stdint.h>
