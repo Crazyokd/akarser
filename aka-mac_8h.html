@@ -65,12 +65,107 @@ $(function() {
 </div>
 </div><!-- top -->
 <div class="header">
+  <div class="summary">
+<a href="#define-members">Macros</a> &#124;
+<a href="#func-members">Functions</a>  </div>
   <div class="headertitle">
 <div class="title">aka-mac.h File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
-
+<div class="textblock"><code>#include &quot;pkthdr.h&quot;</code><br />
+<code>#include &lt;stddef.h&gt;</code><br />
+</div><div class="textblock"><div class="dynheader">
+Include dependency graph for aka-mac.h:</div>
+<div class="dyncontent">
+<div class="center"><img src="aka-mac_8h__incl.png" border="0" usemap="#asrc_2mac_2aka-mac_8h" alt=""/></div>
+<map name="asrc_2mac_2aka-mac_8h" id="asrc_2mac_2aka-mac_8h">
+<area shape="rect" title=" " alt="" coords="19,5,165,32"/>
+<area shape="rect" href="pkthdr_8h_source.html" title=" " alt="" coords="5,80,80,107"/>
+<area shape="rect" title=" " alt="" coords="104,80,179,107"/>
+<area shape="rect" title=" " alt="" coords="7,155,78,181"/>
+</map>
+</div>
+</div><div class="textblock"><div class="dynheader">
+This graph shows which files directly or indirectly include this file:</div>
+<div class="dyncontent">
+<div class="center"><img src="aka-mac_8h__dep__incl.png" border="0" usemap="#asrc_2mac_2aka-mac_8hdep" alt=""/></div>
+<map name="asrc_2mac_2aka-mac_8hdep" id="asrc_2mac_2aka-mac_8hdep">
+<area shape="rect" title=" " alt="" coords="5,5,151,32"/>
+<area shape="rect" href="aka-mac_8c.html" title=" " alt="" coords="6,80,150,107"/>
+</map>
+</div>
+</div>
 <p><a href="aka-mac_8h_source.html">Go to the source code of this file.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
+Macros</h2></td></tr>
+<tr class="memitem:a1755de11f88875a98c0fae77d125b665"><td class="memItemLeft" align="right" valign="top"><a id="a1755de11f88875a98c0fae77d125b665"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>AKA_IDETH_IPV4</b>&#160;&#160;&#160;0x0008</td></tr>
+<tr class="separator:a1755de11f88875a98c0fae77d125b665"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa8341ee68daee50ffcf8be674f656354"><td class="memItemLeft" align="right" valign="top"><a id="aa8341ee68daee50ffcf8be674f656354"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>AKA_IDETH_ARP</b>&#160;&#160;&#160;0x0608</td></tr>
+<tr class="separator:aa8341ee68daee50ffcf8be674f656354"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad520aea172458b21f38597d36c8890c1"><td class="memItemLeft" align="right" valign="top"><a id="ad520aea172458b21f38597d36c8890c1"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>AKA_IDETH_IPV6</b>&#160;&#160;&#160;0xDD86</td></tr>
+<tr class="separator:ad520aea172458b21f38597d36c8890c1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a764ab6d41e320e0dcc04a87d395ca7d5"><td class="memItemLeft" align="right" valign="top"><a id="a764ab6d41e320e0dcc04a87d395ca7d5"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>AKA_IDETH_REVARP</b>&#160;&#160;&#160;0x3580</td></tr>
+<tr class="separator:a764ab6d41e320e0dcc04a87d395ca7d5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab9020f3ee271694f5edf8f892b8ab373"><td class="memItemLeft" align="right" valign="top"><a id="ab9020f3ee271694f5edf8f892b8ab373"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>AKA_IDETH_EAPOL</b>&#160;&#160;&#160;0x8e88</td></tr>
+<tr class="separator:ab9020f3ee271694f5edf8f892b8ab373"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0f15bbbf23de924af646e4425acf1889"><td class="memItemLeft" align="right" valign="top"><a id="a0f15bbbf23de924af646e4425acf1889"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>AKA_IDETH_IPX</b>&#160;&#160;&#160;0x3781</td></tr>
+<tr class="separator:a0f15bbbf23de924af646e4425acf1889"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3271b82f687173f2e6923ec27988c91b"><td class="memItemLeft" align="right" valign="top"><a id="a3271b82f687173f2e6923ec27988c91b"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>AKA_IDETH_PPPoE_DISC</b>&#160;&#160;&#160;0x6388</td></tr>
+<tr class="separator:a3271b82f687173f2e6923ec27988c91b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aea05e27525be0ebed86e65f6bded003e"><td class="memItemLeft" align="right" valign="top"><a id="aea05e27525be0ebed86e65f6bded003e"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>AKA_IDETH_PPPoE_SESS</b>&#160;&#160;&#160;0x6488</td></tr>
+<tr class="separator:aea05e27525be0ebed86e65f6bded003e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa7dcd7b55e375578a0774031784f2ec1"><td class="memItemLeft" align="right" valign="top"><a id="aa7dcd7b55e375578a0774031784f2ec1"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>AKA_IDETH_8021Q</b>&#160;&#160;&#160;0x0081</td></tr>
+<tr class="separator:aa7dcd7b55e375578a0774031784f2ec1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0edb00d62373fc57ab518fefc5c1809b"><td class="memItemLeft" align="right" valign="top"><a id="a0edb00d62373fc57ab518fefc5c1809b"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>AKA_IDETH_8021AD</b>&#160;&#160;&#160;0xa888</td></tr>
+<tr class="separator:a0edb00d62373fc57ab518fefc5c1809b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2d1b3ec40e6df91f0fcf04c6c8012692"><td class="memItemLeft" align="right" valign="top"><a id="a2d1b3ec40e6df91f0fcf04c6c8012692"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>AKA_IDETH_QINQ_NS1</b>&#160;&#160;&#160;0x0091</td></tr>
+<tr class="separator:a2d1b3ec40e6df91f0fcf04c6c8012692"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a15bf6fc26bd3bb76fa1baebd29d83686"><td class="memItemLeft" align="right" valign="top"><a id="a15bf6fc26bd3bb76fa1baebd29d83686"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>AKA_IDETH_QINQ_NS2</b>&#160;&#160;&#160;0x0092</td></tr>
+<tr class="separator:a15bf6fc26bd3bb76fa1baebd29d83686"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af81412b2221c4300ca20fab4c3f38bb9"><td class="memItemLeft" align="right" valign="top"><a id="af81412b2221c4300ca20fab4c3f38bb9"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>AKA_IDETH_LOOP</b>&#160;&#160;&#160;0x0090</td></tr>
+<tr class="separator:af81412b2221c4300ca20fab4c3f38bb9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1601ebf2da429535610434f78c100138"><td class="memItemLeft" align="right" valign="top"><a id="a1601ebf2da429535610434f78c100138"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>AKA_IDETH_MPLS_UNICAST</b>&#160;&#160;&#160;0x4788</td></tr>
+<tr class="separator:a1601ebf2da429535610434f78c100138"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2ce1750d4753d1662db379e7f38def0e"><td class="memItemLeft" align="right" valign="top"><a id="a2ce1750d4753d1662db379e7f38def0e"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>AKA_IDETH_MPLS_MULTICAST</b>&#160;&#160;&#160;0x4888</td></tr>
+<tr class="separator:a2ce1750d4753d1662db379e7f38def0e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8ccd5b13a2943c1e717dc2522ff38cef"><td class="memItemLeft" align="right" valign="top"><a id="a8ccd5b13a2943c1e717dc2522ff38cef"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>AKA_IDETH_ERSPAN_TYPE2</b>&#160;&#160;&#160;0xbe88</td></tr>
+<tr class="separator:a8ccd5b13a2943c1e717dc2522ff38cef"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aad15642c40fef879798b1acb04b9cc18"><td class="memItemLeft" align="right" valign="top"><a id="aad15642c40fef879798b1acb04b9cc18"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>AKA_IDETH_ERSPAN_TYPE3</b>&#160;&#160;&#160;0xeb22</td></tr>
+<tr class="separator:aad15642c40fef879798b1acb04b9cc18"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8efa55e80a672293f9a5864834fb7e91"><td class="memItemLeft" align="right" valign="top"><a id="a8efa55e80a672293f9a5864834fb7e91"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>AKA_IDETH_FPATH</b>&#160;&#160;&#160;0x0389</td></tr>
+<tr class="separator:a8efa55e80a672293f9a5864834fb7e91"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5a25c030a1e3917c38b3376818dbdc38"><td class="memItemLeft" align="right" valign="top"><a id="a5a25c030a1e3917c38b3376818dbdc38"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>AKA_IDETH_CISCO_META</b>&#160;&#160;&#160;0x0989</td></tr>
+<tr class="separator:a5a25c030a1e3917c38b3376818dbdc38"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a06c7bb751277d674e965f59b422095f2"><td class="memItemLeft" align="right" valign="top"><a id="a06c7bb751277d674e965f59b422095f2"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>AKA_IDETH_LLDP</b>&#160;&#160;&#160;0xcc88</td></tr>
+<tr class="separator:a06c7bb751277d674e965f59b422095f2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+Functions</h2></td></tr>
+<tr class="memitem:a477913af8f6c90c6e42174417a1599ec"><td class="memItemLeft" align="right" valign="top"><a id="a477913af8f6c90c6e42174417a1599ec"></a>
+int&#160;</td><td class="memItemRight" valign="bottom"><b>aka_decode_eth</b> (<a class="el" href="structaka__pkt__hdr__s.html">aka_pkt_hdr_t</a> *pkt, unsigned char *buf, size_t size)</td></tr>
+<tr class="separator:a477913af8f6c90c6e42174417a1599ec"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><dl class="section author"><dt>Author</dt><dd>Rekord (<a href="#" onclick="location.href='mai'+'lto:'+'wil'+'dr'+'eko'+'rd'+'@gm'+'ai'+'l.c'+'om'; return false;">wildr<span style="display: none;">.nosp@m.</span>ekor<span style="display: none;">.nosp@m.</span>d@gma<span style="display: none;">.nosp@m.</span>il.c<span style="display: none;">.nosp@m.</span>om</a>) </dd></dl>
 <dl class="section date"><dt>Date</dt><dd>2024-05-11 07:45 </dd></dl>

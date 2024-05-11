@@ -1,7 +1,6 @@
 <map id="src/dloader.h" name="src/dloader.h">
-<area shape="rect" id="node1" title="load and register dynamic libraries" alt="" coords="66,5,171,32"/>
+<area shape="rect" id="node1" title="load and register dynamic libraries" alt="" coords="59,5,165,32"/>
 <area shape="rect" id="node2" href="$aka-config_8h.html" title="parse conf file" alt="" coords="5,80,107,107"/>
-<area shape="rect" id="node3" href="$pkt-header_8h.html" title=" " alt="" coords="131,80,235,107"/>
-<area shape="rect" id="node4" title=" " alt="" coords="94,155,165,181"/>
-<area shape="rect" id="node5" title=" " alt="" coords="189,155,280,181"/>
+<area shape="rect" id="node3" href="$pkthdr_8h_source.html" title=" " alt="" coords="131,80,205,107"/>
+<area shape="rect" id="node4" title=" " alt="" coords="133,155,203,181"/>
 </map>
