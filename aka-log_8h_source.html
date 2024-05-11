@@ -109,13 +109,13 @@ $(function() {
 <div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    AKA_LOG_FULL = AKA_LOG_TRACE,</div>
 <div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;} aka_log_level_e;</div>
 <div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160; </div>
-<div class="line"><a name="l00041"></a><span class="lineno"><a class="line" href="structaka__context__s.html">   41</a></span>&#160;<span class="keyword">typedef</span> <span class="keyword">struct </span><a class="code" href="structaka__context__s.html">aka_context_s</a> {</div>
+<div class="line"><a name="l00041"></a><span class="lineno"><a class="line" href="structaka__log__context__s.html">   41</a></span>&#160;<span class="keyword">typedef</span> <span class="keyword">struct </span><a class="code" href="structaka__log__context__s.html">aka_log_context_s</a> {</div>
 <div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    aka_log_level_e file_level;</div>
 <div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">char</span> *file_location;</div>
 <div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    aka_log_level_e stdout_level;</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;} <a class="code" href="structaka__context__s.html">aka_context_t</a>;</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;} <a class="code" href="structaka__log__context__s.html">aka_log_context_t</a>;</div>
 <div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160; </div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;<span class="keywordtype">void</span> aka_init(<a class="code" href="structaka__conf__entry__s.html">aka_conf_entry_t</a> *entry);</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;<span class="keywordtype">void</span> aka_log_init(<a class="code" href="structaka__conf__entry__s.html">aka_conf_entry_t</a> *entry);</div>
 <div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160; </div>
 <div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;<span class="keywordtype">void</span> aka_log_printf(aka_log_level_e level, <span class="keyword">const</span> <span class="keywordtype">char</span> *file, <span class="keywordtype">int</span> line,</div>
 <div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;                    <span class="keyword">const</span> <span class="keywordtype">char</span> *func, <span class="keywordtype">int</span> content_only, <span class="keyword">const</span> <span class="keywordtype">char</span> *format, ...)</div>
@@ -155,7 +155,7 @@ $(function() {
 <div class="ttc" id="aaka-config_8h_html"><div class="ttname"><a href="aka-config_8h.html">aka-config.h</a></div><div class="ttdoc">parse conf file</div></div>
 <div class="ttc" id="aaka-core_8h_html"><div class="ttname"><a href="aka-core_8h.html">aka-core.h</a></div><div class="ttdoc">core function</div></div>
 <div class="ttc" id="astructaka__conf__entry__s_html"><div class="ttname"><a href="structaka__conf__entry__s.html">aka_conf_entry_s</a></div><div class="ttdef"><b>Definition:</b> aka-config.h:16</div></div>
-<div class="ttc" id="astructaka__context__s_html"><div class="ttname"><a href="structaka__context__s.html">aka_context_s</a></div><div class="ttdef"><b>Definition:</b> aka-log.h:41</div></div>
+<div class="ttc" id="astructaka__log__context__s_html"><div class="ttname"><a href="structaka__log__context__s.html">aka_log_context_s</a></div><div class="ttdef"><b>Definition:</b> aka-log.h:41</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

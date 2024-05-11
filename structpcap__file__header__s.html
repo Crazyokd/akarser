@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.9.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Akarser: aka_decoder_s Struct Reference</title>
+<title>Akarser: pcap_file_header_s Struct Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -63,38 +63,38 @@ $(function() {
 <div class="header">
   <div class="summary">
 <a href="#pub-attribs">Public Attributes</a> &#124;
-<a href="structaka__decoder__s-members.html">List of all members</a>  </div>
+<a href="structpcap__file__header__s-members.html">List of all members</a>  </div>
   <div class="headertitle">
-<div class="title">aka_decoder_s Struct Reference</div>  </div>
+<div class="title">pcap_file_header_s Struct Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="dynheader">
-Collaboration diagram for aka_decoder_s:</div>
-<div class="dyncontent">
-<div class="center"><img src="structaka__decoder__s__coll__graph.png" border="0" usemap="#aaka__decoder__s_coll__map" alt="Collaboration graph"/></div>
-<map name="aaka__decoder__s_coll__map" id="aaka__decoder__s_coll__map">
-<area shape="rect" title=" " alt="" coords="5,95,124,121"/>
-<area shape="rect" href="structaka__pkt__hdr__s.html" title=" " alt="" coords="7,5,122,32"/>
-</map>
-<center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
-<tr class="memitem:adb4ae9ed22529f5df5a0971c2d84b6b0"><td class="memItemLeft" align="right" valign="top"><a id="adb4ae9ed22529f5df5a0971c2d84b6b0"></a>
-protocol_id_t&#160;</td><td class="memItemRight" valign="bottom"><b>proto_id</b></td></tr>
-<tr class="separator:adb4ae9ed22529f5df5a0971c2d84b6b0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a88618836fb04b1168ea97789bc7e95a9"><td class="memItemLeft" align="right" valign="top"><a id="a88618836fb04b1168ea97789bc7e95a9"></a>
-decoder_init_func&#160;</td><td class="memItemRight" valign="bottom"><b>init_fn</b></td></tr>
-<tr class="separator:a88618836fb04b1168ea97789bc7e95a9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7a63a335972276e998558c5936bb0e07"><td class="memItemLeft" align="right" valign="top"><a id="a7a63a335972276e998558c5936bb0e07"></a>
-decoder_process_func&#160;</td><td class="memItemRight" valign="bottom"><b>process_fn</b></td></tr>
-<tr class="separator:a7a63a335972276e998558c5936bb0e07"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a973f0f918772cafe1abaf19ac3c25a45"><td class="memItemLeft" align="right" valign="top"><a id="a973f0f918772cafe1abaf19ac3c25a45"></a>
-decoder_destroy_func&#160;</td><td class="memItemRight" valign="bottom"><b>destroy_fn</b></td></tr>
-<tr class="separator:a973f0f918772cafe1abaf19ac3c25a45"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a10ea199d41c65b820504e62401d1c184"><td class="memItemLeft" align="right" valign="top"><a id="a10ea199d41c65b820504e62401d1c184"></a>
+uint32_t&#160;</td><td class="memItemRight" valign="bottom"><b>magic</b></td></tr>
+<tr class="separator:a10ea199d41c65b820504e62401d1c184"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8195cebfe8ce780daf5ef362b4101219"><td class="memItemLeft" align="right" valign="top"><a id="a8195cebfe8ce780daf5ef362b4101219"></a>
+uint16_t&#160;</td><td class="memItemRight" valign="bottom"><b>version_major</b></td></tr>
+<tr class="separator:a8195cebfe8ce780daf5ef362b4101219"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3a9340ee93b7cc25c26a42cb94dce3bc"><td class="memItemLeft" align="right" valign="top"><a id="a3a9340ee93b7cc25c26a42cb94dce3bc"></a>
+uint16_t&#160;</td><td class="memItemRight" valign="bottom"><b>version_minor</b></td></tr>
+<tr class="separator:a3a9340ee93b7cc25c26a42cb94dce3bc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8d1ed81f171383089c85af236e50c92b"><td class="memItemLeft" align="right" valign="top"><a id="a8d1ed81f171383089c85af236e50c92b"></a>
+int32_t&#160;</td><td class="memItemRight" valign="bottom"><b>thiszone</b></td></tr>
+<tr class="separator:a8d1ed81f171383089c85af236e50c92b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aed8a3bd86ba41d11e253ac9523facf1c"><td class="memItemLeft" align="right" valign="top"><a id="aed8a3bd86ba41d11e253ac9523facf1c"></a>
+uint32_t&#160;</td><td class="memItemRight" valign="bottom"><b>sigfigs</b></td></tr>
+<tr class="separator:aed8a3bd86ba41d11e253ac9523facf1c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a84a965a4ed8b7cebe04bc1b28a08f218"><td class="memItemLeft" align="right" valign="top"><a id="a84a965a4ed8b7cebe04bc1b28a08f218"></a>
+uint32_t&#160;</td><td class="memItemRight" valign="bottom"><b>snaplen</b></td></tr>
+<tr class="separator:a84a965a4ed8b7cebe04bc1b28a08f218"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a602aa9a67302837b01b79b7e001fe0c6"><td class="memItemLeft" align="right" valign="top"><a id="a602aa9a67302837b01b79b7e001fe0c6"></a>
+uint32_t&#160;</td><td class="memItemRight" valign="bottom"><b>linktype</b></td></tr>
+<tr class="separator:a602aa9a67302837b01b79b7e001fe0c6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <hr/>The documentation for this struct was generated from the following file:<ul>
-<li>src/<a class="el" href="dloader_8c.html">dloader.c</a></li>
+<li>src/<a class="el" href="pkt-header_8h_source.html">pkt-header.h</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

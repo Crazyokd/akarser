@@ -109,8 +109,11 @@ Functions</h2></td></tr>
 <tr class="memdesc:adebc7471992b4efcb580b29ccef18f12"><td class="mdescLeft">&#160;</td><td class="mdescRight">destroy aka_conf_group_t object  <a href="aka-config_8c.html#adebc7471992b4efcb580b29ccef18f12">More...</a><br /></td></tr>
 <tr class="separator:adebc7471992b4efcb580b29ccef18f12"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a838bbaf094845a43e5c98f2b1f04d201"><td class="memItemLeft" align="right" valign="top">char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="aka-config_8c.html#a838bbaf094845a43e5c98f2b1f04d201">aka_conf_get</a> (<a class="el" href="structaka__conf__group__s.html">aka_conf_group_t</a> **p_group, const char *o_key)</td></tr>
-<tr class="memdesc:a838bbaf094845a43e5c98f2b1f04d201"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get configuration value by key.  <a href="aka-config_8c.html#a838bbaf094845a43e5c98f2b1f04d201">More...</a><br /></td></tr>
+<tr class="memdesc:a838bbaf094845a43e5c98f2b1f04d201"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get configuration value by key if the key does not have group prefix, then use global group.  <a href="aka-config_8c.html#a838bbaf094845a43e5c98f2b1f04d201">More...</a><br /></td></tr>
 <tr class="separator:a838bbaf094845a43e5c98f2b1f04d201"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3d481699c3bbe8a74ad9b91d963ea885"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structaka__conf__entry__s.html">aka_conf_entry_t</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="aka-config_8c.html#a3d481699c3bbe8a74ad9b91d963ea885">aka_conf_get_entry</a> (<a class="el" href="structaka__conf__group__s.html">aka_conf_group_t</a> *group, const char *name)</td></tr>
+<tr class="memdesc:a3d481699c3bbe8a74ad9b91d963ea885"><td class="mdescLeft">&#160;</td><td class="mdescRight">get entry list by group name  <a href="aka-config_8c.html#a3d481699c3bbe8a74ad9b91d963ea885">More...</a><br /></td></tr>
+<tr class="separator:a3d481699c3bbe8a74ad9b91d963ea885"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
 Variables</h2></td></tr>
@@ -201,7 +204,7 @@ const char *&#160;</td><td class="memItemRight" valign="bottom"><b>default_group
       </table>
 </div><div class="memdoc">
 
-<p>Get configuration value by key. </p>
+<p>Get configuration value by key if the key does not have group prefix, then use global group. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">p_group</td><td>point to aka_conf_group_t pointer </td></tr>
@@ -210,6 +213,44 @@ const char *&#160;</td><td class="memItemRight" valign="bottom"><b>default_group
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>the value of corresponding key or NULL if not found </dd></dl>
+
+</div>
+</div>
+<a id="a3d481699c3bbe8a74ad9b91d963ea885"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3d481699c3bbe8a74ad9b91d963ea885">&#9670;&nbsp;</a></span>aka_conf_get_entry()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structaka__conf__entry__s.html">aka_conf_entry_t</a>* aka_conf_get_entry </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structaka__conf__group__s.html">aka_conf_group_t</a> *&#160;</td>
+          <td class="paramname"><em>group</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>name</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>get entry list by group name </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">group</td><td>configuration group </td></tr>
+    <tr><td class="paramname">name</td><td>group name </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>the entry list or NULL if not found </dd></dl>
 
 </div>
 </div>
