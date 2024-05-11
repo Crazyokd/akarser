@@ -10,14 +10,21 @@
 #include <stdint.h>
 #include <string.h>
 
-#define RAND_DISCARD 1
+#define RAND_DISCARD 0
 static uint8_t use_pcap_ts = 0;
 
 static void aka_parse_data(aka_pkt_hdr_t *pkt, unsigned char *buf, size_t size)
 {
     if (!pkt || !buf || !size) return;
 
-    
+    int idx = 0;
+
+    idx += aka_decode_eth(buf + idx, size);
+    if (idx < 0) {
+        pkt->parse_res = AKA_EPARSE_MAC;
+        return;
+    }
+
 }
 
 int aka_parse(unsigned char *buf, size_t size)
@@ -41,7 +48,7 @@ int aka_parse(unsigned char *buf, size_t size)
             aka_pkthdr->ts_usec = pcap_pkthdr.usec;
         }
 
-#ifdef RAND_DISCARD
+#if (RAND_DISCARD == 1)
         if (rand() < (RAND_MAX >> 1))
             aka_parse_data(aka_pkthdr, buf + idx, pcap_pkthdr.len);
 #else

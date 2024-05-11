@@ -1,7 +1,9 @@
+include src.mk
+
 all: akarser
 
-akarser: main.o akarser.o dloader.o
+akarser: $(SRC_OFILES)
 	$(CC) $^ -o $@ $(CFLAGS) $(LDFLAGS)
 
 clean:
-	rm -f *.o akarser
+	rm -f *.o mac/*.o akarser
