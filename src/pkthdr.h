@@ -10,7 +10,6 @@
 #define AKA_PKT_HEADER_H
 
 #include <stdint.h>
-#include <sys/time.h>
 
 /* extract from pcap/pcap.h */
 typedef struct pcap_file_header_s {
@@ -24,7 +23,8 @@ typedef struct pcap_file_header_s {
 } pcap_file_header_t;
 
 typedef struct pcap_pkthdr_s {
-	struct timeval ts;	/* time stamp */
+	uint32_t sec;
+	uint32_t usec;
 	uint32_t caplen;	/* length of portion present */
 	uint32_t len;	/* length of this packet (off wire) */
 } pcap_pkthdr_t;

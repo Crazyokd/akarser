@@ -37,8 +37,8 @@ int aka_parse(unsigned char *buf, size_t size)
 
         memset(aka_pkthdr, 0, sizeof(aka_pkt_hdr_t));
         if (use_pcap_ts) {
-            aka_pkthdr->ts_sec = pcap_pkthdr.ts.tv_sec;
-            aka_pkthdr->ts_usec = pcap_pkthdr.ts.tv_usec;
+            aka_pkthdr->ts_sec = pcap_pkthdr.sec;
+            aka_pkthdr->ts_usec = pcap_pkthdr.usec;
         }
 
 #ifdef RAND_DISCARD
